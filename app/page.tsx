@@ -3,13 +3,15 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 import { AtSign, Camera, ExternalLink, Mail, MessageCircle } from "lucide-react"
+import Image from "next/image"
 
 // Types
 interface LinkItem {
   title: string
   description?: string
   href: string
-  iconUrl: string
+  iconUrl?: string
+  logoText?: string
 }
 
 interface SocialItem {
@@ -24,43 +26,43 @@ const linksData: LinkItem[] = [
   {
     title: "GitHub",
     description: "View my projects and open source contributions",
-    href: "https://github.com/bikrammondal",
+    href: "https://github.com/BikramMondal5",
     iconUrl: "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
   },
   {
     title: "LinkedIn",
     description: "Connect with me professionally",
-    href: "https://linkedin.com/in/bikrammondal",
-    iconUrl: "https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png",
+    href: "https://www.linkedin.com/in/bikram-mondal-a2bb18343",
+    logoText: "in",
   },
   {
     title: "Portfolio",
     description: "Explore my work and case studies",
-    href: "https://bikrammondal.dev",
+    href: "https://bikram-dot-dev.vercel.app",
     iconUrl: "https://bikram-dot-dev.vercel.app/icons/reactz-logo.png",
   },
   {
     title: "Resume",
     description: "Download my latest resume",
-    href: "/resume.pdf",
+    href: "https://drive.google.com/file/d/10hdAYgZ36zFGJ-kj5-kJE0EF5cJQBbh_/view?usp=drive_link",
     iconUrl: "https://ugc.production.linktr.ee/4c06f002-d396-4ce6-a082-39fd1ec50e7e_image.png",
   },
   {
     title: "GeeksforGeeks",
     description: "Check out my coding solutions",
-    href: "https://auth.geeksforgeeks.org/user/bikrammondal",
+    href: "https://www.geeksforgeeks.org/profile/codesnip85r2",
     iconUrl: "https://ugc.production.linktr.ee/bfbca0fd-fcf7-4e30-84ab-f3b5ad5f4d32_unnamed-removebg-preview.png",
   },
   {
     title: "LeetCode",
     description: "View my problem-solving journey",
-    href: "https://leetcode.com/bikrammondal",
-    iconUrl: "https://ugc.production.linktr.ee/e6b6fe81-6e09-4127-9ab2-ded94bd643c8_LeetCode-Sharing.png",
+    href: "https://leetcode.com/u/bikrammondal5",
+    logoText: "</>",
   },
   {
     title: "Kaggle",
     description: "Explore my data science projects",
-    href: "https://kaggle.com/bikrammondal",
+    href: "https://www.kaggle.com/BikramMondal5",
     iconUrl: "https://ugc.production.linktr.ee/095d69c6-e573-47a5-9c2e-281a59bfb403_images--3--removebg-preview.png",
   },
 ]
@@ -106,11 +108,13 @@ const ProfileCard = () => {
         transition={{ type: "spring", stiffness: 300 }}
         className="relative"
       >
-        <div className="w-28 h-28 rounded-full border-4 border-black overflow-hidden bg-[#FFF5DB] shadow-[6px_6px_0px_#000000]">
-          <img
+        <div className="relative w-28 h-28 rounded-full border-4 border-black overflow-hidden bg-[#FFF5DB] shadow-[2px_5px_0px_#000000]">
+          <Image
             src="/avatar.jpeg"
             alt="Bikram Mondal"
-            className="w-full h-full object-cover"
+            fill
+            sizes="112px"
+            className="object-cover"
           />
         </div>
       </motion.div>
@@ -170,6 +174,8 @@ interface LinkCardProps {
 }
 
 const LinkCard = ({ item, index }: LinkCardProps) => {
+  const shouldEnlargeLogo = item.title !== "GitHub" && item.title !== "Kaggle"
+
   return (
     <motion.a
       href={item.href}
@@ -183,13 +189,27 @@ const LinkCard = ({ item, index }: LinkCardProps) => {
       className="block w-full bg-[#FFF5DB] border-4 border-black rounded-2xl p-5 shadow-[6px_6px_0px_#000000] hover:shadow-[8px_8px_0px_#000000] transition-all cursor-pointer"
     >
       <div className="flex items-center gap-4">
-        <div className="w-12 h-12 rounded-xl bg-[#FF8A00] border-3 border-black flex items-center justify-center flex-shrink-0 p-2.5 shadow-[3px_3px_0px_#000000]">
-          <img
-            src={item.iconUrl}
-            alt=""
-            aria-hidden="true"
-            className="h-full w-full object-contain brightness-0"
-          />
+        <div className="relative w-12 h-12 rounded-xl bg-[#FF8A00] border-3 border-black flex items-center justify-center flex-shrink-0 p-2.5 shadow-[3px_3px_0px_#000000]">
+          {item.logoText ? (
+            <span
+              aria-hidden="true"
+              className={`font-black leading-none text-[#111827] ${item.title === "LinkedIn" ? "text-[1.7rem]" : "text-xl"
+                }`}
+            >
+              {item.logoText}
+            </span>
+          ) : (
+            <span className="relative h-full w-full" aria-hidden="true">
+              <Image
+                src={item.iconUrl ?? ""}
+                alt=""
+                fill
+                sizes="28px"
+                className={`object-contain brightness-0 ${shouldEnlargeLogo ? "scale-125" : ""
+                  }`}
+              />
+            </span>
+          )}
         </div>
 
         <div className="flex-1 min-w-0">
@@ -219,7 +239,7 @@ const Footer = () => {
       className="text-center py-6"
     >
       <p className="text-sm font-medium text-[#111827]/60">
-        © 2024 Bikram Mondal. All rights reserved.
+        © 2026 Bikram Mondal. All rights reserved.
       </p>
     </motion.footer>
   )
