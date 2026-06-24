@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🔗 MyLinkTree: 
 
-## Getting Started
+A playful, responsive personal LinkTree built with Next.js. It brings together my GitHub, LinkedIn, portfolio, resume, coding profiles, and social links in one clean page with animated cards, bold shadows, and a warm profile-first layout. ✨
 
-First, run the development server:
+## 🌟 Features
+
+- 👤 Profile-first landing page with avatar, headline, and short bio
+- 🔗 Quick-access cards for GitHub, LinkedIn, Portfolio, Resume, GeeksforGeeks, LeetCode, and Kaggle
+- 🎯 Custom LinkedIn `in` and LeetCode `</>` marks for crisp logo rendering
+- 🖼️ Optimized images with Next.js image handling
+- 🎬 Smooth hover and entrance animations powered by Framer Motion
+- 📱 Responsive layout that works neatly on mobile and desktop
+- 🎨 Bold, friendly visual style with rounded cards and comic-inspired typography
+
+## 🛠️ Technologies Used
+
+- ⚡ Next.js 16 - React framework and app routing
+- ⚛️ React 19 - Component-based UI
+- 🎨 Tailwind CSS 4 - Utility-first styling
+- 🎞️ Framer Motion - Page and card animations
+- 🧩 Lucide React - Social and action icons
+- 🧠 TypeScript - Type-safe component data
+- ✅ ESLint - Code quality checks
+
+## ⚙️ Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/BikramMondal5/myLinkTree.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd myLinkTree
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open your browser and visit:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📸 Screenshot
 
-## Learn More
+Add a current app screenshot at `public/screenshot.png` to make the preview image above render on GitHub.
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 How to Use
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 🧭 Open the homepage to view the full profile link hub.
+- 🖱️ Click any link card to visit the connected profile or document.
+- 📄 Use the Resume card to open the Google Drive resume.
+- 💻 Update links, descriptions, or logo data from `app/page.tsx`.
+- 🎨 Adjust global typography and theme styles from `app/globals.css`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 Contribution
 
-## Deploy on Vercel
+Found a bug or have an idea? Contributions are welcome.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 🍴 Fork the repository
+- 🌿 Create a new branch
+- 🛠️ Make your changes
+- ✅ Run `npm run lint`
+- 🚀 Open a pull request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📜 License
+
+This project is licensed under the `MIT License`.
