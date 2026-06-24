@@ -48,16 +48,16 @@ const linksData: LinkItem[] = [
     iconUrl: "https://ugc.production.linktr.ee/4c06f002-d396-4ce6-a082-39fd1ec50e7e_image.png",
   },
   {
-    title: "GeeksforGeeks",
-    description: "Check out my coding solutions",
-    href: "https://www.geeksforgeeks.org/profile/codesnip85r2",
-    iconUrl: "https://ugc.production.linktr.ee/bfbca0fd-fcf7-4e30-84ab-f3b5ad5f4d32_unnamed-removebg-preview.png",
-  },
-  {
     title: "LeetCode",
     description: "View my problem-solving skills",
     href: "https://leetcode.com/u/bikrammondal5",
     logoText: "</>",
+  },
+  {
+    title: "GeeksforGeeks",
+    description: "Check out my coding solutions",
+    href: "https://www.geeksforgeeks.org/profile/codesnip85r2",
+    iconUrl: "https://ugc.production.linktr.ee/bfbca0fd-fcf7-4e30-84ab-f3b5ad5f4d32_unnamed-removebg-preview.png",
   },
   {
     title: "Kaggle",
@@ -252,7 +252,7 @@ const LinkTreeQrCode = () => {
       initial={{ opacity: 0, x: -16 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.8, duration: 0.5 }}
-      className="origin-bottom-left rounded-2xl border-4 border-dotted border-black bg-[#FFF5DB] p-2"
+      className="origin-bottom-left rounded-2xl border-4 border-dotted border-[#111827] bg-[#FFF5DB] p-2"
     >
       <Image
         src="/bikram_linktree_qr.png"
